@@ -11,7 +11,7 @@ export default function SignupPage() {
         </p>
       </div>
       <SignupForm />
-      {process.env.NODE_ENV === 'production' && <DebugSupabase />}
+      <DebugSupabase />
     </div>
   )
 }
