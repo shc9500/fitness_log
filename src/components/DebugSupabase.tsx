@@ -10,7 +10,7 @@ export function DebugSupabase() {
       <div>URL: {url ? url.substring(0, 30) + '...' : 'MISSING'}</div>
       <div>KEY: {key ? key.substring(0, 20) + '...' : 'MISSING'}</div>
       <div>URL Valid: {url?.includes('supabase.co') ? '✅' : '❌'}</div>
-      <div>KEY Valid: {key?.length > 100 ? '✅' : '❌'}</div>
+      <div>KEY Valid: {key && key.length > 100 ? '✅' : '❌'}</div>
     </div>
   )
 }
