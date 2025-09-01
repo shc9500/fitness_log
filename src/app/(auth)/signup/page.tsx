@@ -1,4 +1,5 @@
 import { SignupForm } from '@/components/SignupForm'
+import { DebugSupabase } from '@/components/DebugSupabase'
 
 export default function SignupPage() {
   return (
@@ -10,6 +11,7 @@ export default function SignupPage() {
         </p>
       </div>
       <SignupForm />
+      {process.env.NODE_ENV === 'production' && <DebugSupabase />}
     </div>
   )
 }

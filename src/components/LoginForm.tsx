@@ -36,12 +36,9 @@ export function LoginForm() {
         window.location.href = '/'
       }
     } catch (error: unknown) {
+      console.error('Login error details:', error)
       const errorMessage = (error as Error)?.message || '알 수 없는 오류'
-      if (errorMessage.includes('fetch') || (error as Error)?.name === 'TypeError') {
-        setMessage('Supabase 서버에 연결할 수 없습니다. 실제 Supabase URL과 키를 .env.local에 설정해주세요.')
-      } else {
-        setMessage('로그인 중 오류가 발생했습니다: ' + errorMessage)
-      }
+      setMessage(`로그인 오류: ${errorMessage}`)
     } finally {
       setLoading(false)
     }
